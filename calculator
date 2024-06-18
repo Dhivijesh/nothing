@@ -1,0 +1,150 @@
+HTML:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="calculator">
+        <div class="display" id="display">0</div>
+        <button class="button number">7</button>
+        <button class="button number">8</button>
+        <button class="button number">9</button>
+        <button class="button operator">/</button>
+        <button class="button number">4</button>
+        <button class="button number">5</button>
+        <button class="button number">6</button>
+        <button class="button operator">*</button>
+        <button class="button number">1</button>
+        <button class="button number">2</button>
+        <button class="button number">3</button>
+        <button class="button operator">-</button>
+        <button class="button number">0</button>
+        <button class="button number">.</button>
+        <button class="button function">C</button>
+        <button class="button operator">+</button>
+        <button class="button function">=</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+CSS:
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.9;
+    margin: 0;
+    padding: 0;
+    background-color: #3489cf
+}
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    background-color: #b06f6f;
+    color: #161515;
+    text-align: center;
+    padding: 20px 0;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+header p {
+    margin: 5px 0;
+    font-size: 1.2em;
+}
+
+#about {
+    background-color: #3489cf;
+    padding: 40px 0;
+    text-align: center;
+}
+
+#about img {
+    border-radius: 50%;
+    width: 300px;
+    height: 300px;
+    margin-bottom: 30px;
+}
+
+#skills {
+    background-color: #d0b67b;
+    padding: 100px 0;
+    text-align: center;
+}
+
+#skills ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#skills li {
+    display: inline-block;
+    background-color: #4CAF50;
+    color: white;
+    padding: 60px 80px;
+    margin: 3px;
+    border-radius: 3px;
+}
+
+#projects {
+    padding: 40px 0;
+}
+
+.project {
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+}
+
+.project img {
+    width: 200px;
+    height: 150px;
+    border-radius: 5px;
+    margin-right: 20px;
+}
+
+.project-info {
+    flex: 1;
+}
+
+#resume {
+    background-color: #dcb970;
+    padding: 40px 0;
+    text-align: center;
+}
+
+#resume a {
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#resume a:hover {
+    text-decoration: underline;
+}
+
+#contact {
+    background-color: #d4a8a8;
+    padding: 40px 0;
+    text-align: center;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
