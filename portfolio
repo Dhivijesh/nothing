@@ -1,0 +1,200 @@
+HTML:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dhivijesh's Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header id="header">
+        <div class="container">
+            <h1>Dhivijesh</h1>
+            <p>Web Developer | Designer</p>
+        </div>
+    </header>
+
+    <section id="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <div class="bio">
+                <img src="image 1.webp" alt="Dhivijesh">
+                <p>Experienced Web Developer and Designer skilled in HTML, CSS, and JavaScript with a passion for creating visually appealing and user-friendly websites. Strong background in frontend development, including responsive design and cross-browser compatibility. Proven ability to translate design concepts into code while adhering to web standards and best practices. Excels in collaborating with teams to deliver high-quality projects that meet client objectives and enhance user experiences.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <div class="container">
+            <h2>Skills</h2>
+            <ul>
+                <li>HTML & CSS</li>
+                <li>JavaScript </li>
+                
+                <li>UI/UX Design</li>
+               
+            </ul>
+        </div>
+    </section>
+
+    <section id="projects">
+        <div class="container">
+            <h2>Projects</h2>
+            <div class="project">
+                <img src="project-1.jpg" alt="Project 1">
+                <div class="project-info">
+                    <h3>IMPLEMENTING COOLING RODS IN NUCLEAR POWER PLANTS</h3>
+                    <p>This project utilizes Natural Language Processing (NLP) techniques to automate the scheduling and reminders for cooling rod replacements in nuclear reactors. By analyzing textual data from maintenance logs and operational reports, the system identifies key indicators related to cooling rod lifespan and deterioration. It employs machine learning algorithms to predict optimal replacement times based on historical data and current operational conditions. The implementation aims to enhance operational efficiency, ensure regulatory compliance, and minimize downtime by proactively managing cooling rod maintenance schedules through automated notifications and alerts.</p>
+                </div>
+            </div>
+            <div class="project">
+                <img src="project-2.svg" alt="Project 2">
+                <div class="project-info">
+                    <h3>CANTEEN MANAGEMENT SYSTEM</h3>
+                    <p>The Canteen Management System (CMS) is a comprehensive solution designed to streamline and automate the operations of canteens or cafeterias within organizations. It facilitates efficient management of food ordering, menu planning, inventory control, and customer billing. The system enables users to place orders electronically, monitor stock levels in real-time, and generate reports for analysis and decision-making. By integrating digital payment options and user-friendly interfaces, CMS enhances convenience for both canteen staff and customers, optimizing service delivery and enhancing overall operational efficiency.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="resume">
+        <div class="container">
+            <h2>Resume</h2>
+            <p>Download my resume <a href="resume.pdf" target="_blank">here</a>.</p>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <h2>Contact</h2>
+            <p>Email: dhivijeshb@gmail.com</p>
+            <p>Phone: +9840312345</p>
+        </div>
+    </section>
+
+    <footer id="footer">
+        <div class="container">
+            <p>&copy; 2024 Dhivijesh. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
+CSS:
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.9;
+    margin: 0;
+    padding: 0;
+    background-color: #3489cf
+}
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    background-color: #b06f6f;
+    color: #161515;
+    text-align: center;
+    padding: 20px 0;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+header p {
+    margin: 5px 0;
+    font-size: 1.2em;
+}
+
+#about {
+    background-color: #3489cf;
+    padding: 40px 0;
+    text-align: center;
+}
+
+#about img {
+    border-radius: 50%;
+    width: 300px;
+    height: 300px;
+    margin-bottom: 30px;
+}
+
+#skills {
+    background-color: #d0b67b;
+    padding: 100px 0;
+    text-align: center;
+}
+
+#skills ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#skills li {
+    display: inline-block;
+    background-color: #4CAF50;
+    color: white;
+    padding: 60px 80px;
+    margin: 3px;
+    border-radius: 3px;
+}
+
+#projects {
+    padding: 40px 0;
+}
+
+.project {
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+}
+
+.project img {
+    width: 200px;
+    height: 150px;
+    border-radius: 5px;
+    margin-right: 20px;
+}
+
+.project-info {
+    flex: 1;
+}
+
+#resume {
+    background-color: #dcb970;
+    padding: 40px 0;
+    text-align: center;
+}
+
+#resume a {
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#resume a:hover {
+    text-decoration: underline;
+}
+
+#contact {
+    background-color: #d4a8a8;
+    padding: 40px 0;
+    text-align: center;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
