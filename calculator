@@ -33,118 +33,136 @@ HTML:
 </html>
 CSS:
 body {
-    font-family: Arial, sans-serif;
-    line-height: 1.9;
-    margin: 0;
-    padding: 0;
-    background-color: #3489cf
-}
-
-.container {
-    max-width: 960px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-header {
-    background-color: #b06f6f;
-    color: #161515;
-    text-align: center;
-    padding: 20px 0;
-}
-
-header h1 {
-    margin: 0;
-    font-size: 2.5em;
-}
-
-header p {
-    margin: 5px 0;
-    font-size: 1.2em;
-}
-
-#about {
-    background-color: #3489cf;
-    padding: 40px 0;
-    text-align: center;
-}
-
-#about img {
-    border-radius: 50%;
-    width: 300px;
-    height: 300px;
-    margin-bottom: 30px;
-}
-
-#skills {
-    background-color: #d0b67b;
-    padding: 100px 0;
-    text-align: center;
-}
-
-#skills ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-#skills li {
-    display: inline-block;
-    background-color: #4CAF50;
-    color: white;
-    padding: 60px 80px;
-    margin: 3px;
-    border-radius: 3px;
-}
-
-#projects {
-    padding: 40px 0;
-}
-
-.project {
-    margin-bottom: 30px;
     display: flex;
+    justify-content: center;
     align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #282c34;
 }
 
-.project img {
-    width: 200px;
-    height: 150px;
+.calculator {
+    display: grid;
+    grid-template-columns: repeat(4, 100px);
+    grid-gap: 15px;
+    padding: 20px;
+    border: 2px solid #61dafb;
+    border-radius: 10px;
+    background-color: #20232a;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.display {
+    grid-column: span 4;
+    background-color: #61dafb;
+    border: 2px solid #ccc;
     border-radius: 5px;
-    margin-right: 20px;
+    padding: 20px;
+    font-size: 2em;
+    text-align: right;
+    color: #20232a;
 }
 
-.project-info {
-    flex: 1;
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    font-size: 1.5em;
+    cursor: pointer;
+    user-select: none;
+    transition: background-color 0.3s;
+    color: #20232a;
 }
 
-#resume {
-    background-color: #dcb970;
-    padding: 40px 0;
-    text-align: center;
+.button.number {
+    background-color: #61dafb;
 }
 
-#resume a {
-    color: #333;
-    text-decoration: none;
-    font-weight: bold;
+.button.number:hover {
+    background-color: #52c7e5;
 }
 
-#resume a:hover {
-    text-decoration: underline;
+.button.number:active {
+    background-color: #3ba7c7;
 }
 
-#contact {
-    background-color: #d4a8a8;
-    padding: 40px 0;
-    text-align: center;
+.button.operator {
+    background-color: #e0913a;
 }
 
-footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 10px 0;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
+.button.operator:hover {
+    background-color: #d08131;
+}
+
+.button.operator:active {
+    background-color: #b07128;
+}
+
+.button.function {
+    background-color: #d9534f;
+    color: white;
+}
+
+.button.function:hover {
+    background-color: #c43d3a;
+}
+
+.button.function:active {
+    background-color: #a32f2c;
+}
+JAVA SCRIPT:
+const display = document.getElementById('display');
+const buttons = Array.from(document.getElementsByClassName('button'));
+
+let displayValue = '0';
+let pendingValue = null;
+let operator = null;
+
+buttons.forEach(button => {
+    button.addEventListener('click', (e) => {
+        const value = e.target.innerText;
+
+        if (value === 'C') {
+            displayValue = '0';
+            pendingValue = null;
+            operator = null;
+        } else if (value === '=') {
+            if (pendingValue !== null && operator !== null) {
+                displayValue = operate(pendingValue, operator, parseFloat(displayValue)).toString();
+                pendingValue = null;
+                operator = null;
+            }
+        } else if (['+', '-', '*', '/'].includes(value)) {
+            if (pendingValue === null) {
+                pendingValue = parseFloat(displayValue);
+            } else if (operator !== null) {
+                pendingValue = operate(pendingValue, operator, parseFloat(displayValue));
+            }
+            operator = value;
+            displayValue = '0';
+        } else {
+            if (displayValue === '0') {
+                displayValue = value;
+            } else {
+                displayValue += value;
+            }
+        }
+        updateDisplay();
+    });
+});
+
+function operate(a, operator, b) {
+    switch (operator) {
+        case '+': return a + b;
+        case '-': return a - b;
+        case '*': return a * b;
+        case '/': return a / b;
+    }
+}
+
+function updateDisplay() {
+    display.innerText = displayValue;
 }
